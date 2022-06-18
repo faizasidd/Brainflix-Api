@@ -1,0 +1,23 @@
+{
+  "name": "faiza-siddiqi-brainflix-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faizasidd/faiza-siddiqi-brainflix-api.git"
+  },
+  "author": "Faiza Siddiqi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faizasidd/faiza-siddiqi-brainflix-api/issues"
+  },
+  "homepage": "https://github.com/faizasidd/faiza-siddiqi-brainflix-api#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "env": "^0.0.2"
+  }
+}
