@@ -5,6 +5,8 @@ const { v4: uuidv4 } = require('uuid');
 const videosJsonPath = '../data/videos.json';
 const videos = require(videosJsonPath);
 
+// GET /videos that responds with an array of videos.
+
 router.get('/videos', (req, res) => {
     return res.json(
       videos.reduce((accumulator, curr) => {
@@ -20,6 +22,8 @@ router.get('/videos', (req, res) => {
     );
   });
 
+// GET /videos/:id that responds with an object containing the details of the video with an id of :id.
+
   router.get('/videos/:id', (req, res) => {
     const id = req.params.id;
     const video = videos.find(video => video.id === id);
@@ -33,5 +37,24 @@ router.get('/videos', (req, res) => {
     }
   });
 
+ // POST /videos that will add a new video to the video list.
+
+  router.post('/videos', (req, res) => {
+    const date = new Date();
+    const newVideo = {
+      ...req.body, //title, channel, description, image
+      id: uuidv4(),
+      views: 0,
+      likes: 0,
+      duration: '0:20',
+      timestamp: date.getTime(),
+      video: 'https://project-2-api.herokuapp.com/stream',
+      comments: []
+    }
+  
+    videos.push(newVideo);
+  
+    return res.json(newVideo);
+  })  
 
 module.exports = router
