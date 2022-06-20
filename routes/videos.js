@@ -20,6 +20,18 @@ router.get('/videos', (req, res) => {
     );
   });
 
+  router.get('/videos/:id', (req, res) => {
+    const id = req.params.id;
+    const video = videos.find(video => video.id === id);
+  
+    if (video) {
+      return res.json(video);
+    } else {
+      return res.status(404).send({
+        message: 'No video with that id exists'
+      })
+    }
+  });
 
 
 module.exports = router
