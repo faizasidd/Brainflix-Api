@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(videoRoutes);
 
+
 app.listen(PORT, () => {
   console.log(`Server listening on Port ${PORT}`);
 });
